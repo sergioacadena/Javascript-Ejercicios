@@ -1,0 +1,66 @@
+<script>
+    //typeof es una función para motrar el tipo de valor del dato numer, string, float ...
+    13
+    console.log(typeof 13, 13)// tipo number o entero usa 64 bits de memoria
+    //una computadora puede reprecentar 2 a la 64 numero diferented 18mil trillones
+    9.81
+    console.log(typeof 9.81, 9.81)//el punto decimal reprecenta otro bit uzado en memoria, al igual que el menos de un negativo
+    console.log(typeof -5, -5)
+    numeroExponente = 2e2 //podemos usar la letra e para expresar un exponente
+    console.log(typeof numeroExponente, numeroExponente) //primero muestro el tipo de valor, luego el valor
+    
+    // los decimales de valores infinitos como pi estan limitados a 9 trillones de bits 
+    const pi = Math.PI;
+    // Mostrar con 5 decimales
+    console.log("Pi =", pi.toFixed(5));
+
+    
+
+    console.log( 100 + 4 *11)//la multiplicación sucede primero ver precedenca de operadores
+
+    let numero = 5; // Representación binaria: 00000000000000000000000000000101
+        // Desplazamiento a la izquierda en 2 bits
+    let resultado = numero << 2; // Resultado binario: 0000000000000000000000000010100
+
+    //operador módulo muestra el recidui de una división con el símbolo %
+    console.log("el residuo de la division de 5 entre 2 es:",5%2)//NaN significa no es un numero Not a Number cuando es infinito el numero
+    // String
+
+    console.log("\\") // para escribir esta barra invertida debo añadir otra barra invertida, solo memostrara una barra, ya que esta barra es especial
+
+    console.log("esta es la pripera liena\n y esta es la segunda linea")// la barra inclinada mas la letra n, \n  es un salto de linea 
+
+console.log(resultado); // Imprime 20
+
+
+// 2. Tabulación horizontal
+let ejemploTabulacion = "Texto con\t\ttabulaciones.";
+console.log(ejemploTabulacion);
+
+// 3. Comilla simple (apóstrofe)
+let ejemploComillaSimple = "Esto es una cadena con una comilla simple (apóstrofe): \'Hola\'.";
+console.log(ejemploComillaSimple);
+
+// 4. Comilla doble
+let ejemploComillaDoble = "Otra cadena con comilla doble: \"JavaScript\".";
+console.log(ejemploComillaDoble);
+
+// 5. Barra inclinada invertida (para representar una barra inclinada en sí)
+let ejemploBarraInclinada = "Ruta del archivo: C:\\mi\\directorio\\archivo.txt";
+console.log(ejemploBarraInclinada);
+
+concatenar= "con" + "ca" + "te" + "nar"
+console.log(concatenar);
+
+concatenarCalculo = `la mitad de 100 es ${100/2}`// usando comilla invertida y ${} puedo insertar calculos dentro del string platilla literal
+console.log(concatenarCalculo );
+console.log(3>2)// valores booleanos, devuelve true o false según se cumpla la condición
+console.log(3<2)
+
+//se examinan los caracteres uno por uno de izquierda a derecha hasta que se encuentra una diferencia.
+//una letra mayor es una muy lejana como la Z y una menor una muy cercana como la A
+// es decir que los valores menores son los primeros en el abecedario a,b, c..son menores...xyz mayores
+console.log("Andres Cadena"<"Andres Cardenas")// Compara Alfabéticamente quien es mayor con UNICODE
+
+
+</script>
