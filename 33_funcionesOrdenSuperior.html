@@ -1,0 +1,48 @@
+<script>
+    /* Las funciones que operan en otras funciones, ya sea tomándolas como argumentos o retornandolas, se denominan funciones de ordensuperior. */
+    function mayorQue(n) { //función recibe un valor n
+        return m => m > n; //retorna otra función nueva que recibe un valor m
+    } 
+    //cuando yo almaceno una función en una variable lo que devuelve es el return
+    let mayorQue10 = mayorQue(10); //llamo a la función anterior y almaceno el retunrn (otra función) en la varible mayorQue10
+    console.log(mayorQue10(11)); // → true
+
+    function returnEnVariable(){
+        
+        return  v => v= "Retornando la funcion anidada en otra función"
+    }
+    let returnFuncion = returnEnVariable()
+    console.log(returnFuncion)
+    //cuando yo almaceno una función en una variable lo que devuelve es el return
+
+    function ruidosa(funcion) { 
+        return (...argumentos) => { // retorno una función, que se para los argumentos 
+            console.log("llamando con",argumentos); //muestro lo que hay en argumentos que es [3, 2, 1]
+            let resultado = funcion(...argumentos); //almaceno en variable lo que esta en funció y los seprao, que es math.min y [3, 2, 1]
+            console.log("llamada con",argumentos,",retorno",resultado); 
+            return resultado;
+            };
+        } 
+         
+    ruidosa(Math.min)(3, 2, 1); 
+
+    // → llamando con [3, 2, 1]
+    // → llamada con [3, 2, 1] , retorno 1
+    ["A","B"].forEach(letra => console.log(letra));
+
+    function aMenosQue(prueba, entonces) { 
+        if (!prueba) entonces(); 
+        } 
+
+        repetir(3, n => { 
+            aMenosQue(n % 2 == 1, () => { 
+                console.log(n,"es par"); 
+                    }
+                    ); 
+                 }
+            ); 
+        // → 0 es par // → 2 es par
+
+
+       
+</script>

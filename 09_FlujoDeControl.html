@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+<script>
+
+let elNumero = Number(prompt("Elige un numero")); //La función Número convierte un valor a un número
+console.log("Tu número es la raiz cuadrada de: "+ elNumero * elNumero);
+
+
+let elNumero1 = Number(prompt("Elige un numero")); 
+if (!Number.isNaN(elNumero1)) { // preguntoa si no es un caracter diferente a un numero haga esto...
+    //Number.isNaN esto devuelve true en caso de que no sea un numero y se niega con !, llo que pasa de true a false
+    console.log("Tu número es la raiz cuadrada de:" + elNumero1 * elNumero1);
+    }
+    else{
+        console.log("No has ingresado un número entero");     
+    }
+
+//no hay nececidad de llaves en casod de un if de una sola linea
+    
+
+
+    /* Elprogramaprimerocomprobarásinumeroesmenorque10. Si loes,eligira esarama,mostrara"Pequeño",yestálisto. 
+    Sinoesasí,tomalaramaelse,que asuvezcontieneunsegundoif. Si lasegundacondición(<100)esverdadera, 
+    esosignificaqueelnúmeroestáentre10y100,y"Mediano"semuestra. Sino esasí, 
+    lasegundayúltimalaramaelseeselegida. Elesquemadeesteprogramaseveasí:
+    let numero = Number(prompt("Elige un numero")); */
+
+    if (1 + 1 == 2) console.log("Es verdad");
+
+    let numero=10;
+    if (numero < 10) { 
+        console.log("Pequeño");
+       } 
+    else if (numero < 100) { 
+        console.log("Mediano"); 
+    } 
+    else {
+         console.log("Grande");
+         }
+
+
+         // muestra los numero pares hasta doce, empieza con 0 y suma de a 2 y los vamostrando dentro del ciclo while
+    let numero2 = 0; 
+    while (numero2 <= 12) 
+    { 
+        console.log(numero2); 
+        numero2 = numero2 + 2; 
+    }
+
+    // muestra 2 elevado a la diez
+    let resultado = 1;
+     let contador = 0;
+      while (contador < 10) { 
+        resultado = resultado * 2; 
+        contador = contador + 1; 
+    } 
+        console.log(resultado); // → 1024
+
+
+        //do while
+       /*  Aplicar el operador! convertirá un valor a tipo Booleano antes denegarlo y todos los strings,
+        excepto ""seran convertidas a true.
+        Esto significa que el ciclo continúa dando vueltas hasta que proporcione su nnombre no-vacío. */
+        let tuNombre; 
+        do { 
+            tuNombre = prompt("Quien eres?"); 
+    } 
+        while (!tuNombre); // hasta que no sea true, es decir, hasta que no haya algo almacenado, es false y contnua el ciclo
+
+        
+    console.log(tuNombre);
+
+</script>
+
+
+</head>

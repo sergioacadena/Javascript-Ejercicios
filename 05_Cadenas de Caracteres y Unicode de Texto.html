@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+
+
+//una letra mayor es una letra como la Z y una menor una muy cercana como la A
+// es decir que los valores menores son los primeros en el abecedario a, b, c son menores y x,y,z mayores
+
+let cadena1 = "Manzana";
+let cadena2 = "Naranja";
+
+// Mostrando los valores Unicode de cada carácter en cadena1
+for (let i = 0; i < cadena1.length; i++) {
+    // muestra cada letra de la palabra y luego el código unicode de cada letra con la función charCodeAt(i)
+    console.log(`Unicode de ${cadena1[i]}: ${cadena1.charCodeAt(i)}`); 
+}
+
+// Mostrando los valores Unicode de cada carácter en cadena2
+for (let i = 0; i < cadena2.length; i++) {
+    console.log(`Unicode de ${cadena2[i]}: ${cadena2.charCodeAt(i)}`);
+}
+
+// Comparación lexicográfica
+console.log(`Comparación lexicográfica: ${cadena1} < ${cadena2} -> ${cadena1 < cadena2}`);
+
+</script>

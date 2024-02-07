@@ -1,0 +1,68 @@
+<script>
+
+//El siguiente código está permitido y se ejecuta sin ningún  problema: 
+function cuadrado(x) { 
+    return x * x;
+     }
+ console.log(cuadrado(4, true,"erizo"));
+//,cuandolollamamos contres,el lenguaje no se queja.Esteignoralosargumentosextraycalculael cuadradodelprimero.
+
+function menos(a, b) { 
+
+    if (b === undefined) return-a; 
+    else return a- b; 
+} 
+
+    console.log(menos(10)); // →-10 
+    console.log(menos(10, 5)); // → 5
+
+
+
+// cuando no se envía nada al segundo parámetro o argument de la función, 
+//se puede almacenar con un igual = al lado del argumento, el valor que quiera
+// exponente = 2 solo se tendrá en cuenta si no se envía una valor a la funciónS
+
+    function potencia(base, exponente = 2) { 
+        let resultado = 1; 
+        for (let cuenta = 0; cuenta < exponente; cuenta++) 
+        { resultado *= base; } return resultado; 
+    } 
+    console.log(potencia(4)); // → 16 
+    console.log(potencia(2, 6)); // → 64
+
+
+
+
+//Esta situación es una buena demostración del hecho de que las vinculaciones locales se crean de nuevo para cada llamada, y
+//que las diferentes llamadas no pueden pisotear las distintas vinculaciones locales entre sí
+    function envolverValor(n) {
+         let local = n; 
+         return () => local;
+         } 
+         let envolver1 = envolverValor(1); 
+         let envolver2 = envolverValor(2); 
+         
+    console.log(envolver1()); // → 1 //que las diferentes llamadas no pueden pisotear las distintas vinculaciones locales entre sí
+    console.log(envolver2()); // → 2 //que las diferentes llamadas no pueden pisotear las distintas vinculaciones locales entre sí
+
+
+
+
+
+    /* En el ejemplo,se llama a multiplicador y esta crea un entorno en el que su parámetro factor está ligado a 2. 
+    El valor de función que retorna, el cual se almacena en duplicar, recuerda este entorno. Asi que cuando es llamada, 
+    multiplica su argumento por 2. */
+
+
+    function multiplicador(factor) { 
+        return numero => numero * factor; 
+    }
+    //aquí, en duplicar, se almacena la función flecha porque el return de multiplicador retorna esa linea de código
+    //pero, ademas, almacena en la variable factor el 2 porque es el valor que se le envío a multiplicar
+     let duplicar = multiplicador(2); //recuerda, duplicar almacena lo que retorna multiplicar, que es la función flecha
+
+     // → 10 aquí se le envía a la función flecha el parámetro 5 en el argumento numero, 
+     //dicha función tenia el factor 2 que se le reallimentao en alinea anterior
+     console.log(duplicar(5)); 
+
+</script>

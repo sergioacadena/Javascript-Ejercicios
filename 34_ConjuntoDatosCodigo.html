@@ -1,0 +1,29 @@
+<script>
+/* Tal objeto te dice el nombre del codigo, los rangos de Unicode asignados a él, la dirección en la que está escrito, la tiempo de origen(aproximado),
+si todavía está en uso,y un enlace a más información.La dirección en la que esta escrito puede ser"ltr"(left-to-right)para izquierd a aderecha, 
+"rtl"(right-to-left) para derecha a izquierda(la forma en que se escriben los textos en árabe y en hebreo),
+o"ttb"(top-to-bottom) para de arriba a abajo(como con la escritura de Mongolia).*/
+const codigo ={ 
+    name:"Coptic", //Parece describir el nombre de algo relacionado con el alfabeto copto.
+    ranges: [[994, 1008], [11392, 11508], [11513, 11520]], //un array de arrays. Cada subarray contiene dos números que representan un rango.
+    direction:"ltr", //Indica la dirección del texto, en este caso, de izquierda a derecha ("ltr" es el acrónimo de "left-to-right").
+    year:-200, // representar un año o una fecha asociada con algo relacionado con el alfabeto copto
+    living: false, //Puede indicar si algo está vivo o no. En este contexto, podría referirse a la preservación del alfabeto copto en la actualidad.
+    link:"https://en.wikipedia.org/wiki/Coptic_alphabet" //URL que proporciona más información sobre el alfabeto 
+
+} 
+let SCRIPTS = []
+SCRIPTS.push(codigo)
+
+function filtrar(array, prueba) { 
+    let pasaron = []; 
+    for (let elemento of array) {
+    if (prueba(elemento)) { 
+        pasaron.push(elemento); 
+    } 
+} return pasaron;
+ } 
+ console.log(filtrar(SCRIPTS, codigo => codigo.living)); //Lafunciónusaelargumentollamadoprueba,unvalordefunción
+ console.log(SCRIPTS.filtrar(codigo => codigo.direction =="ttb")); // → [{name:"Mongolian",…}, …]
+     // → [{name:"Adlam",…}, …]
+</script>

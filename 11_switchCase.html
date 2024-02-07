@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    
+    <script>
+
+switch (prompt("Como esta el clima?")) 
+{ 
+    case"lluvioso": 
+        console.log("Recuerda salir con un paraguas.");
+        break;// Continuará ejecutándose, incluso a través de otras etiquetas, hasta que llegue a una declaración break
+
+    case"soleado": 
+        console.log("Vistete con poca ropa.");
+         // Continuará ejecutándose, incluso a través de otras etiquetas, hasta que llegue a una declaración break
+
+    case"nublado": 
+        console.log("Ve afuera.");
+        break; 
+
+    default:
+         console.log("Tipo de clima desconocido!"); 
+         break;
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

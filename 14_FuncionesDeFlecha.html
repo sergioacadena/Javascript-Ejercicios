@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<script>
+
+/* console.log("El futuro dice:",futuro()); 
+
+function futuro() { 
+   return"Nunca tendran autos voladores";    
+   } */
+
+
+// la palabra function reemplazada por la flecha, es lo mismo =>
+
+const potencia = (base, exponente) => { //Laflecha viene después de la lista de parámetros, y es seguida por el cuerpo de la función
+    let resultado = 1; 
+
+        for (let cuenta = 0; cuenta < exponente; cuenta++) {
+                 resultado *= base; 
+            }
+
+return resultado;
+
+};
+
+// si la función solo recibe un parámetro pueden omitirce los parentesis, 
+//y si solo hay una linea en la función se omiten las llaves y el return
+const cuadrado1 = (x) => { return x * x; }; 
+const cuadrado2 = x => x * x;//se lee: (cuadrado2) con este parámetro de entrada =(x) hagame esto (=>) y retorna eso ultimo
+
+//Cuando una función de flecha no tiene parámetros,su lista de parámetros es solo un conjunto vacío de paréntesis
+const bocina = () => {
+    console.log("Toot"); 
+    };
+
+    //Las funciones de flecha se agregaron en 2015, principalmente para que fuera posible escribir 
+    //pequeñas expresiones de funciones de una manera menos verbosa
+
+    
+</script>

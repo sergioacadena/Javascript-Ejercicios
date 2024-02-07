@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+<script>
+
+//Ejecutar una función tambien se conoce como invocarla,llamarla,oaplicarla. Losvaloresdados alasfuncionessellamanargumentos.
+//prompt("Introducir contraseña");
+
+//f12 para abrir la consola
+// funcion Math.max produce el número mayor
+console.log("funcion math.max muestra el número mayor de (2, 4)");
+console.log(Math.max(2, 4));
+
+console.log("funcion math.min muestra el número menor de (2, 4) + 100");
+console.log(Math.min(2, 4) + 100)
+
+
+console.log("funcion math.max muestra el número máximo de un array");
+const array1 = [1, 3, 2];
+console.log(Math.max(...array1)); /* //usando el operador de expansión (...),puedes descomponer 
+el array en sus elementos individuales y pasarlos como argumentos separados a Math.max(): */
+console.log("Más fuciones Math en https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math");
+
+//La función Math.abs() retorna el valor absoluto de un número, que es
+
+console.log("La función Math.abs() retorna el valor absoluto de un número, que es")
+Math.abs("-1"); // 1
+Math.abs(-2); // 2
+
+let y=5.432
+console.log("La función Math.floor() devuelve el valor entero redondeado más bajo de 5.432:")
+function getFloor(x) {
+  return Math.floor(x);
+}
+console.log(getFloor(y))
+
+console.log("La función Math.hypot() devuelve la riz cuadrada de la suma de los argumentos (3, 4)")
+console.log(Math.hypot(3, 4));
+
+console.log(Math.imul(0xffffffff, 5));
+
+console.log("La función Math.pow() devuelve la potencia de 7 elevado a la 3 Math.pow(7, 3), es exponencial")
+console.log(Math.pow(7, 3));
+
+// numeros aleatorios
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+//El Math.round()método estático devuelve el valor de un número redondeado al entero más cercano.
+console.log(Math.round(0.9));
+// Expected output: 1
+
+/* El Math.sign()método estático devuelve 1 o -1, 
+indicando el signo del número pasado como argumento. Si la entrada es 0 o -0, se devolverá tal cual. */
+console.log(Math.sign(3));
+
+
+console.log(Math.pow(7, 3));
+
+
+console.log("Math.sqrt(a * a + b * b); devuelve Raiz cuadrada de (a * a + b * b) donde 4=3 y b=4")
+function calcHypotenuse(a, b) {
+  return Math.sqrt(a * a + b * b);
+}
+
+console.log(calcHypotenuse(3, 4));
+// Expected output: 5
+
+
+
+</script>
+</head>

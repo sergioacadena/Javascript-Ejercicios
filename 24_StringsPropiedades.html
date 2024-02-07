@@ -1,0 +1,64 @@
+<script>
+
+/* Podemos leerpropiedadescomolengthytoUpperCasedevaloresstring. Pero si intentasagregarunanuevapropiedad,estanosemantiene. */
+let kim ="Kim";
+kim.edad = 88; 
+console.log(kim.edad); // → undefined
+
+/* Losvaloresde tipostring, número, yBooleanonosonobjetos, yaunque el lenguajenosequejasi 
+intentasestablecernuevaspropiedadesenellos, en realidadnoalmacenaesaspropiedades. */
+
+//parece que a un string se le pueden agregar propiedades de arrays
+console.log("panaderia".slice(0, 3)); // → pan me muestra (corte) los caracteres desde i0 hasta i0, el ultimo no lo muestra
+console.log("panaderia".indexOf("a")); // → 1 busca el elemento a en el array y devuelve la primera posición donde lo encuentra
+
+console.log("uno dos tres".indexOf("tres")); // → 8 me muestra lo que se parezca desde el primer caracter en adelante, solo pasa con strings
+
+console.log(" okey \n".trim());//trim elmina espacios en balnco y saltos de linea de una string
+
+console.log(String(6).padStart(3,"0")); // → 006 toma el estring 6 y padStart le añade ceros a la izquierda, y lo deja de largo de 3 = 006
+
+
+//AGREGAR Y ELIMINAR DE UN STRING
+
+let oracion ="Los pajaros secretarios se especializan en pisotear"; 
+//split(dividir) corta el String a partir de eliminar el caracter dentro de parentesis, y crea un array para los elementos cortados
+let palabras = oracion.split(" ");
+console.log(palabras); // → ["Los","pajaros","secretarios","se","especializan","en"," pisotear"] Array cortado
+
+//Cobierte los elementos String cortados de un array en una frase o string, y los une con el caracter entre comillas
+console.log(palabras.join(".")); 
+// → Los. pajaros. secretarios. se. especializan. en. pisotear
+
+//REPITE UN STRING LA CANTIDAD DE VECES QUE ESTÁ ENTRE PARENTESIS
+console.log("LA".repeat(3)); // → LALALA
+
+// SEPUEDE ACCEDER A UN STRING COMO A UN ARRAY
+let string ="abc"; 
+console.log(string.length); // → 3 
+console.log(string[1]); // → b
+
+// el operador de tres puntos (spread operator) “extiende” o descompone al array en la llamada de la función,
+//pasando sus elementos como argumentos separados.
+function maximo(...numeros) {// ... tres puntos desglosa en partes lo que se le envía, como partes separadas sin ser array
+    let resultado =-Infinity; // almacena menos infinito en la variable resultados, es menor que que el número mas grande de -infiito
+    for (let numero of numeros) {//recorre el string numeros y lo almacena en numero
+         if (numero > resultado) {//pregunta si lo que hay en numero es menor que lo que hay en resultado que empieza desde menos infinito
+            resultado = numero;//va almacenando el numero mayor que vaya encontrando hasta terminar el array
+         }
+        } 
+        return resultado; } 
+console.log(maximo(4, 1, 9,-2)); // → 9
+
+let numeros = [5, 1, 7];
+console.log(maximo(...numeros)); // → 7 */
+
+let fragmento =["nunca","entenderas"]; //array con dos palabras en cada indice
+//concateno palabras con el array desglosado en cambio de llamar cada indice gracias al operadorm ... (spread operator)
+console.log(["tu",...fragmento,"completamente"]); // → ["tu","nunca","entenderas","completamente"]
+
+//ojo javascript no advierte si sobre escribes una variable global tipo var, evitar al max variables globales
+
+
+
+</script>

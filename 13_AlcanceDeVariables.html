@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<script>
+
+let x = 10; //let declarada fuera de la función es visible dentro de todo el código, es GLOBAL
+if (true) { 
+    let y = 20; // let solo existe dentro del if o una función es LOCAL
+    var z = 30; // var es visible dentro y fuera de una función es GLOBAL y declarada dentro de una función
+     console.log(x + y + z); 
+    // → 60 
+} 
+// "Y" no es visible desde aquí
+console.log(x + z); // → 40
+
+
+//cuandoel códigodentrode lafunción dividirEnDosserefieraanumero,estaraviendosupropionumero,noelnumero enelalcanceglobal.
+
+const dividirEnDos = function(numero) { 
+    return numero / 2; // esta variable numero es independiente de la variable numero fuera de la función
+}; 
+
+let numero = 10;
+ console.log(dividirEnDos(100)); // → 50 retoorna 5 porque el numero dentro de la funcion no tiene nada que ver con el numero fuera de ella
+ console.log(numero); // → 10
+
+
+
+
+
+ const humus = function(cantidadPlatos) { //recibe cantidad de platos para hacer el calculo de la cantidad de ingrediente
+
+    const ingrediente = function(cantidad, unidad, nombre){ // puedo anidar una función dentro de otra
+
+         let cantidadIngrediente = cantidad * cantidadPlatos; //multiplica la cantidad de platos por la la medida del ingrediente
+         if (cantidadIngrediente > 1) { // si la cantidad del ingrediente es mayor a 1, le añade una s a la unidad para que quede en plural
+            unidad +="s";
+         } 
+         console.log(`${cantidadIngrediente} ${unidad} ${nombre}`); // imprime las variables respectivas
+    };
+    
+    ingrediente(1,"lata","garbanzos"); //llamado a la función ingrediente() y envío de datos a dicha función y respectivamente
+    ingrediente(0.25,"taza","tahini"); 
+    ingrediente(0.25,"taza","jugo de limón"); 
+    ingrediente(1,"clavo","ajo"); 
+    ingrediente(2,"cucharada","aceite de oliva"); 
+    ingrediente(0.5,"cucharadita","comino"); 
+
+ };
+ humus(3)//llamado de la función humus y envío de la cantidad de platos
+
+
+//Este código funciona,aunque la función esté definida debajo del código que lo usa.
+//Las declaraciones de funciones no son parte del flujode control regular de arriba hacia abajo.
+ console.log("El futuro dice:",futuro()); 
+
+ function futuro() { 
+    return"Nunca tendran autos voladores";    
+    }
+
+
+</script>

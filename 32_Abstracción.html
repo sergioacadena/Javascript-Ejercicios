@@ -1,0 +1,31 @@
+<script>
+    let etiquetas = []; //crea un array
+     repetir(5, i => { //llama a la función repetir() y le envío 5, para repetir 5 veces, y una creación de un objeto + 1
+        etiquetas.push(`Unidad ${i +1}`);
+        }
+     ); 
+     console.log(etiquetas);
+
+     function repetir(n, accion) { 
+        for (let i = 0; i < n; i++) {
+                accion(i); 
+             }
+         }
+
+    function mayorQue(n) { 
+        return m => m > n; //una función dentro de otra funcion compara a m con n, si se cumple retorna true
+    } 
+    let mayorQue10 = mayorQue(10); //envío 10 a mayor Que y almaceno la función en una variable nueva, pero esta siempre tendrá el valor de 10
+    console.log(mayorQue10(11)); // → true
+
+
+    function ruidosa(funcion) { 
+        return (...argumentos) => { 
+            console.log("llamando con",argumentos);
+            let resultado = funcion(...argumentos); 
+            console.log("llamada con",argumentos,",retorno",resultado);
+            return resultado; }; } 
+    ruidosa(Math.min)(3, 2, 1); 
+    // → llamando con [3, 2, 1] 89// → llamada con [3, 2, 1] , retorno 1
+    
+</script>

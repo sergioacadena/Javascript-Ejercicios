@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<script>
+
+// && este Y este deben cumplirse (ser iguales) de lo contrario retorna false
+console.log("OPERADOR AND")
+console.log(true && false)// → false 
+console.log(true && true)// → true
+
+console.log("OPERADOR OR")
+// || este O este deben cumplirse (ser iguales) de lo contrario retorna false
+console.log(false || true) // → true 
+console.log(false || false) // → false
+
+console.log("OPERADOR NOT")
+console.log(!true)// devuelve lo contrario, voltea true a false y vice
+
+console.log("OPERADOR NEGATIVO (- (10- 2))")
+console.log(- (10- 2))
+
+// de izquierda a dereche || tiene la menor precedencia (Jerarquia), luegolesigue &&, luego le siguen los operadores de
+//comparación(>,==,ydemás),y luego el resto.
+
+console.log("JERARQUÍA DE OPERADORES LÓGICOS EN LA OPERACIÓN 1 + 1 == 2 && 10 * 10 > 50")
+console.log(1 + 1 == 2 && 10 * 10 > 50)
+
+console.log("OPERADOR TERNARIO O CONDICIONAL true ? 1 : 2")
+// SI ES VERDADERO ESCOJE EL VALOR DE LA IZQUIERDA Y SE FALSE EL DE LA DERECHA
+console.log(true ? 1 : 2); // → 1 
+console.log(false ? 1 : 2); // → 2
+
+console.log("CORTOCIRCUITO OP LÓGICOS CON VALORES DE DIFERENTE TIPO")
+console.log(null ||"usuario") // → usuario el operador O || el valor de la derecha cuando se puede comvertir en verdadero
+console.log("Agnes"||"usuario") // → si no puede convertir ninguno en boobleano (verdadero) devuelve el valor de la izquierda
+</script>

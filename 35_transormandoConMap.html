@@ -1,0 +1,37 @@
+<script>
+   /*  Supongamos que tenemos un array de objetos llamado SCRIPTS,
+     y cada objeto tiene una propiedad name que representa el nombre del código.
+     Queremos crear un nuevo array que contenga solo los nombres de los códigos. */
+    // Supongamos que tenemos un array de objetos
+const SCRIPTS = [
+  { name: "Latin", direction: "ltr" },
+  { name: "Arabic", direction: "rtl" },
+  { name: "Cyrillic", direction: "ltr" },
+  // ... otros objetos ...
+];
+
+// Usamos el método map para crear un nuevo array de nombres
+const nombresDeCodigos = SCRIPTS.map(codigo => codigo.name);// mapeeme de SCRIPTS esto=> codigo.name, y lo comvierte en un nuevo array
+
+// Imprimimos el nuevo array
+console.log(nombresDeCodigos);
+
+
+//función reducir REDUCE
+
+function reduce(array, combinar, inicio) { //la funcion recibe un arra, una combinación de a+b, y un valor inicial=0
+    let actual = inicio; //la variable actual se inicializa con el argumento inicio que es 0
+    for (let elemento of array) {  //la variable elemento se convierte en el array que entra a la función y lo repite por cada elemento del array
+        actual = combinar(actual, elemento); 
+        //actual que es 0, llama la funcion combinar que es a+b ( => a + b); a= actual= inicio=0; b = a lo que tiene el array[i]
+        //entonces suma los objetos combinando una función que llama otra función dentro de sus argumentos
+    } 
+    return actual; 
+} 
+console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0)); // → 10
+
+
+//Metodo Reduce nativo, hace lo que le indiquemos en la operación con los elementos del array
+console.log([1, 2, 3, 4].reduce((a, b) => a + b)); //reduce a la operación indicada con los elementos del array
+
+</script>

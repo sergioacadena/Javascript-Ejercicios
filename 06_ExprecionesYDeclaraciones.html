@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<script>
+
+//Si una expresión corresponde al fragmento de una oración,una declaración 
+    //en JavaScript corresponde a una oración completa. Un programa es una lista de declaraciones.
+    //En algunos casos,JavaScript te permite omitir el punto y coma al final de una declaración. 
+    //En otros casos, tiene que estar allí,o la próxima línea serán tratada como parte de la mismad eclaración.
+    1; 
+!false;
+
+let atrapado = 5 * 5;
+//Ladeclaraciónanteriorcreaunavinculaciónllamadaatrapadoylausapara capturarelnúmeroqueseproducealmultiplicar5por5.
+let diez = 10;
+console.log(diez * diez); // → 100
+
+let humor ="ligero"; 
+console.log(humor); // → ligero 
+humor ="oscuro"; 
+console.log(humor); // → oscuro
+
+let deudaLuigi = 140;
+deudaLuigi = deudaLuigi- 35;
+ console.log(deudaLuigi); // → 105
+
+//Una sola declaración let puede definir múltiples vinculaciones. Las definiciones deben estar separadas por comas
+ let uno = 1, dos = 2; 
+ console.log(uno + dos); // → 3
+
+ var nombre ="Ayda"; 
+ const saludo ="Hola"; 
+ console.log(saludo + nombre); // → Hola Ayda
+
+ //var puede ser usada detro de if y llamada fuera de el, const y 
+ 
+ console.log("VAR PUEDE SER LLAMADA DENTRO DEL IF Y FUERA DE EL, CONST NI LET PUEDEN");
+ function ejemploVar() {
+    if (true) {
+        var x = 10;
+    }
+    console.log(x); // 10 (aunque x fue declarado dentro del bloque if)
+}
+ejemploVar()
+
+function ejemploLet() {
+    console.log("Una let muestra error porque \nno esta definida dentro del if o fuera de el");
+    if (true) {
+        let y = 20;
+        console.log(y); // 20
+    }
+    // Error: y no está definido fuera del bloque if
+    
+     //console.log(y); 
+}
+ejemploLet()
+
+
+function ejemploConst() {
+    const z = 30;
+    console.log("Error: no se puede reasignar una constante const");
+    //z = 40;  Error: no se puede reasignar una constante
+    console.log(z); // 30
+}
+ejemploConst()
+
+/* Aunque parece que x no está declarado en la primera línea, debido al hoisting, 
+la declaración de var x se eleva al principio del ámbito de la función, lo que significa que console.log(x)
+ no produce un error. Sin embargo, en ese punto,
+x aún no tiene un valor asignado, por lo que console.log(x) imprime undefined. */
+
+console.log("ejemplo de Hoisting, la variable var \npuede ser llamada primero y declarada despues");
+function ejemploHoisting() {
+    console.log(x); // undefined
+    var x = 5;
+    console.log(x); // 5
+}
+ejemploHoisting()
+
+//PALABRAS RESERVADAS EN JS
+/* break case catch class const continue debugger 
+default delete do else enum export extends 
+false finally for function if implements import 
+interface in instanceof let new package private protected 
+public return static super switch this throw true try typeof 
+var void while with yield */
+
+console.log("PALABRAS RESERVADAS EN JS:");
+console.log("break case catch class const continue debugger\ndefault delete do else enum export extends false finally \nfor function if implements import interface\nin instanceof let new package private protected\npublic return static super switch this throw true try typeof \nvar void while with yield");
+
+</script>

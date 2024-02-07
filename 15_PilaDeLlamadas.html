@@ -1,0 +1,30 @@
+<script>
+
+    function saludar(quien) {
+        console.log("Hola"+ quien); 
+        }
+
+    saludar("Harry"); 
+    console.log("Adios");
+
+    //El lugar donde la computadora almacena este contexto 
+    //(llamar función, enviar datos a la funición, ejecutar función, y devolver datos)
+    //es la pila de llamadas. Cada vez que se llama a una función, 
+    //el contexto actual es almacenado en la parte superior de esta “pila”
+
+
+    //Almacenar esta pila requiere espacio en la memoria de la computadora. 
+    //Cuando la pila crece demasiado grande, la computadora fallará con u nmensaje como “fuera de espacio de pila ”o “demasiada recursividad”
+
+    //Maximum call stack size exceeded Se excedió el número máximo de llamadas a la pila
+    //Como son las cosas,nos quedaremos sin espacio,o “explotaremos la pila”.
+    function gallina() { 
+        return huevo(); 
+    }
+     function huevo() {
+         return gallina();
+    } 
+
+    console.log(gallina() +"vino primero."); // → ??
+
+</script>

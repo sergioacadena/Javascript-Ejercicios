@@ -1,0 +1,40 @@
+<script>
+function igualdadProfunda(objetoA, objetoB) {
+  // Verifica si ambos son objetos
+  if (typeof objetoA === 'object' && objetoA !== null &&
+      typeof objetoB === 'object' && objetoB !== null) {
+    
+    // Obtiene las claves de ambos objetos
+    const clavesA = Object.keys(objetoA);
+    const clavesB = Object.keys(objetoB);
+
+    // Verifica si la cantidad de claves es la misma
+    if (clavesA.length !== clavesB.length) {
+      return false;
+    }
+
+    // Compara recursivamente los valores de las propiedades
+    for (const clave of clavesA) {
+      if (!clavesB.includes(clave) || !igualdadProfunda(objetoA[clave], objetoB[clave])) {
+        return false;
+      }
+    }
+
+    // Si ha pasado todas las verificaciones, los objetos son iguales
+    return true;
+  }
+
+  // Si no son objetos, compara directamente usando el operador de igualdad
+  return objetoA === objetoB;
+}
+
+// Ejemplos de uso
+const obj1 = { a: 1, b: { c: 2 } };
+const obj2 = { a: 1, b: { c: 2 } };
+const obj3 = { a: 1, b: { c: 3 } };
+
+console.log(igualdadProfunda(obj1, obj2)); // Debería imprimir true
+console.log(igualdadProfunda(obj1, obj3)); // Debería imprimir false
+
+
+</script>

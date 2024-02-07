@@ -1,0 +1,39 @@
+<script>
+    //Los métodos correspondientes para agregar y remover cosas en el comienzo de un array se llaman unshift y shift.
+    let listaDeTareas = [];//creo un array
+
+    function recordar(tarea) { 
+        listaDeTareas.push(tarea); //añado una dato al array al final de la lista con push
+        // Agregastareasalfinaldelacola al llamar recordar("verduras")
+    } 
+
+    function obtenerTarea() { 
+        return listaDeTareas.shift();// obtiebe y elimina un datos al principio de la cola del array
+        //llamas a obtenerTarea()para obtener (y eliminar) el elemento frontal de la cola
+    } 
+    function recordarUrgentemente(tarea) { //LafunciónrecordarUrgentementetambiénagregaunatareaperolaagregaal frenteenlugardealaparteposteriordelacola.
+        listaDeTareas.unshift(tarea); //almacena un dato al principio del array
+        }
+
+// → 1 Busca dentro del array, de principio afin, el dato entre parentcis de .indexOf(2)...sin no encuentra el dato devuelve -1
+console.log("Buscando con indexOf",[1, 2, 3, 2, 1].indexOf(5)); 
+
+// → 3 Busca en el array, de fin a principio, el dato entre parentecis de lastIndexOf(2)...sin no encuentra el dato devuelve -1
+console.log("Buscando con lastIndexOf",[1, 2, 3, 2, 1].lastIndexOf(5)); 
+
+
+// → recorta el array (rebanar=slice) el desde le i2 hasta i4 y muestra lo que está dentro de ese rango, el ultimo no lo muestra
+console.log("recortando array desde i2 hasta i4",[0, 1, 2, 3, 4].slice(2, 3)); // → [2, 3] 
+//→ recorta el array (rebanar=slice) el desde le i2 en adelante, muestra del corte en adelante
+console.log("recortando array desde i2 hacia adelante",[0, 1, 2, 3, 4].slice(2)); // → [2, 3, 4]
+
+//CORTAR UN ARRAY Y ELMINAR UN DATO PARA LOEGO PEGAR LOS ARRAY RESTANTES DEL CORTE
+
+function remover(array, indice) { //la función recibe un array y un idice el cual va a eliminar
+
+    // corta desde i0 hasta el indice enviado a la función (recuerda que slice no envía el ultimo dato, ahí está el corte)
+    return array.slice(0, indice) .concat(array.slice(indice + 1)); // concatena el desde el numero siguiente al indice en adelante
+}
+console.log(remover(["a","b","c","d","e"],2)); // → ["a","b","d","e"]
+
+</script>

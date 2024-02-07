@@ -1,0 +1,82 @@
+<script>
+
+//MUTABILIDAD
+
+let objeto1 = {valor: 10}; 
+let objeto2 = objeto1; //cre una copia del objeto 1 con un nombre distinto, tienen la misma identidad
+let objeto3 = {valor: 10}; //objeto 3 solo tiene los mismos valores que los demas objetos, pero no tiene la identidad de ellos
+
+console.log(objeto1 == objeto2); // → true 
+console.log(objeto1 == objeto3); // → false 
+
+//Si modifico objeto 1 automáticamente se modifica objeto 2 porque tienen la misma IDENTIDAD al asignarle un objeto al otro let objeto2 = objeto1;
+objeto1.valor = 15; 
+
+console.log(objeto2.valor); // → 15 en la linea anterior midifique el objeto 1 con 15, pero tambien cambio para el objeto 2 gracias a la identidad
+console.log(objeto3.valor); // → 10
+
+
+
+
+const puntuacion = {visitantes: 0, locales: 0};
+
+// Esto esta bien, puedo asignarlo un nuevo valor a propiedades de manera indpendiente
+puntuacion.visitantes = 1;
+
+// Esto no esta permitido, sale error. No puedo asignarle valores nuevos a todas las propiedades, porque es const, 
+//y es como si creara un objeto nuevo que ya era constante, no se podia
+//puntuacion = {visitantes: 1, locales: 1};
+
+/* Cuandocomparasobjetosconel operador==enJavaScript, este loscomparapor identidad:
+producirátruesolosiambosobjetossonprecisamenteel mismovalor. Comparardiferentesobjetos 
+retornarafalse, inclusosi tienen propiedades idénticas. Nohayunaoperacióndecomparación“profunda” 
+incorporadaenJavaScript,quecompareobjetosporcontenidos,peroesposible quelaescribastumismo */
+
+
+//si el nombre de propiedad en la notación de llaves no es seguido por un valor, su el valor se toma de la vinculación con el mismo nombre.
+let diario = []; // diario es un Array
+
+function añadirEntrada(eventos, ardilla) { 
+    //CREANDO UN ARRAY CON OBJETOS EN CADA INDEX
+    diario.push({eventos, ardilla}); // diario lo voy a llenar con objetos en cada index, cad vez que lo llame con la función añadirEntrada
+}
+
+añadirEntrada(["trabajo","toque un arbol","pizza","sali a correr ", "television"],false); 
+añadirEntrada(["trabajo","helado","coliflor","lasaña", "toque un arbol","me cepille los dientes"],false); 
+añadirEntrada(["fin de semana","monte la bicicleta","descanso"," nueces", "cerveza"],true);
+
+
+function phi(tabla) { 
+    return (tabla[3] * tabla[0]- tabla[2] * tabla[1]) / 
+    Math.sqrt(
+        (tabla[2] + tabla[3]) * 
+        (tabla[0] + tabla[1]) * 
+        (tabla[1] + tabla[3]) * 
+        (tabla[0] + tabla[2])
+        ); 
+    } console.log(phi([76, 9, 4, 1])); // → 0.068599434
+
+
+    function phi(tabla) { 
+        return (tabla[3] * tabla[0]- tabla[2] * tabla[1]) / 
+                Math.sqrt((tabla[2] + tabla[3]) * 
+                          (tabla[0] + tabla[1]) * 
+                          (tabla[1] + tabla[3]) * 
+                          (tabla[0] + tabla[2])); 
+                        } 
+    console.log(phi([76, 9, 4, 1])); // → 0.068599434
+
+    function tablaPara(evento, diario) { 
+        let tabla = [0, 0, 0, 0];
+         for (let i = 0; i < diario.length; i++) {
+             let entrada = diario[i], index = 0;
+              if (entrada.eventos.includes(evento)) index += 1; 
+              if (entrada.ardilla) index += 2; 
+              tabla[index] += 1; 
+            } 
+            return tabla;
+         } 
+    console.log(tablaPara("pizza",JOURNAL)); // → [76, 9, 4, 1]
+
+
+</script>

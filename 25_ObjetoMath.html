@@ -1,0 +1,25 @@
+<script>
+
+function puntoAleatorioEnCirculo(radio) { 
+    let angulo = Math.random() * 2 * Math.PI; 
+    return {
+            x: radio * Math.cos(angulo),
+            y: radio * Math.sin(angulo)
+            }; 
+        } 
+console.log(puntoAleatorioEnCirculo(2)); // → {x: 0.3667, y: 1.966}
+
+//random va de 0 a 0,99999 excluye el 1 y incluye el 1
+console.log(Math.random()); // → 0.36993729369714856 
+console.log(Math.random()); // → 0.727367032552138 
+console.log(Math.random()); // → 0.40180766698904335
+
+
+/* Multiplicar el número aleatorio por 10 nos da un número mayor que o igual a cero e inferiora 10.
+Como Math.floor redondea hacia abajo, esta expresión producirá, con la misma probabilidad,
+cualquier número desde 0 hasta 9. */
+console.log(Math.floor(Math.random() * 10)); // → 2
+
+/* También están las funciones Math.ceil(que redondea hacia arriba hasta), Math.round(al número entero más cercano),
+ y Math.abs, que toma el valor absoluto de un número */
+</script>

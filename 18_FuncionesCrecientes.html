@@ -1,0 +1,85 @@
+<script>
+    function imprimirInventarioGranja(vacas, pollos) { 
+        let stringVaca = String(vacas); 
+        while (stringVaca.length < 3) { 
+            stringVaca ="0"+ stringVaca; 
+          } 
+
+        console.log(`${stringVaca} Vacas`);
+
+         let stringPollos = String(pollos); 
+         while (stringPollos.length < 3) { 
+            stringPollos ="0"+ stringPollos; 
+             } 
+        
+        console.log(`${stringPollos} Pollos`); 
+    } 
+        
+        imprimirInventarioGranja(7, 11);
+
+
+
+        function alcocharConCeros(numero, amplitud) { //recibe en la variable número la cantida y en amplitudo el tamaño del cochon de ceros
+            let string = String(numero); //convierte la variable numero en string para poder acolcharla
+            while (string.length < amplitud) { //hacer esto mientras que el tamaño del string numero sea menor que la amplitud
+                string ="0"+ string; //añade un cero a la izquierda al string
+            } return string; //devuelve el string acolchado
+
+        } function imprimirInventarioGranja(vacas, pollos, cerdos) { //esta funcion recibe la cantidad en cad variable
+            console.log(`${alcocharConCeros(vacas, 4)} Vacas`); //se concatena el metodo acolchar que recibe cantidad y amplitud, junto con el texto
+            console.log(`${alcocharConCeros(pollos, 4)} Pollos`);
+             console.log(`${alcocharConCeros(cerdos, 5)} Cerdos`); 
+        } 
+        imprimirInventarioGranja(7, 16, 3);//llamamos la función de imprimir y le enviamos la cantidad de animales
+        /* Las funciones que crean valores son más fácilesde combinar en nuevas formas que las funciones  que 
+        directamente realizan efectos secundarios */
+
+        // Define f para sostener un valor de función 
+        const f = function(a) { console.log(a + 2); }; 
+        // Declara g para ser una función
+        function g(a, b) { return a * b * 3.5; }
+         // Un valor de función menos verboso 
+        let h = a => a % 3;
+
+        // EL NUMERO MENOR ENTRE 1 Y 40 ES
+        const min = (num1, num2) => {
+            if(num1<num2) return num1
+            else return num2
+        }
+
+        console.log("EL NUMERO MENOR ENTRE 1 Y 40 ES: "+min(1, 40))
+
+        function esPar(numero){
+
+            if(numero===0){
+                return 1;
+            }else  if(numero%2===0){
+                    console.log("el número: " +numero + " es Par")
+                    return  esPar(numero-2)
+                }else{
+                    numero = numero - 1
+                    esPar(numero)
+                }
+            
+
+
+        }
+        esPar(75)
+
+        //contador de FF cuenta la cantidad de letras F que tiene una palabra
+        function cotnarFs(palabra, letra){
+            letra = String(letra)
+            palabra = String(palabra)
+            let cantidad =0;
+            for (let i = 0; i < palabra.length; i++) {
+                if(palabra[i]===letra){
+                    cantidad++;
+                }                
+            }
+            return cantidad;
+        }
+        let letra="a"
+        let palabra="FarFan FaderFa"
+        console.log(`la cantidad de letras ${letra} que tiene la palabra ${palabra} es: `+cotnarFs(palabra, letra))
+        
+</script>

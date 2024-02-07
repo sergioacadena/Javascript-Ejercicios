@@ -1,0 +1,69 @@
+<script>
+
+    //Dentro de las llaves, hay una lista de propiedades separadas por comas. 
+    //Cada propiedad tiene un nombre seguido de dos puntos y un valor
+    let dia1 = { // ESTO DIA1 ES UN OBJETO CON SUS PROPIEDADES ARDILLA Y EVENTOS
+        ardilla: false, 
+        eventos:["trabajo","toque un arbol","pizza","salir a correr"] 
+    }; 
+    console.log(dia1.ardilla); // → false 
+    console.log(dia1.lobo); // → undefined 
+    dia1.lobo = false; // Es posible asignarle un valor a una expresión de propiedad con un operador =. 
+    //Esto reemplazará el valor de la propiedad si ya tenia uno o crea una nueva propiedad en el objeto si no fuera así.
+    console.log(dia1.lobo); // → false
+
+
+    //Las propiedades cuyos nombres no sean nombres válidos de vinculaciones o números válidos deben estar entre comillas
+    let descripciones = { 
+        trabajo:"Fui a trabajar", "toque un arbol":"Toque un arbol"
+    };
+
+
+    // propiedad DELETE de un Objeto
+
+    let unObjeto = { // creo un objeto con las pripiedades izquierda y derecha con valores respectivos
+        izquierda: 1, 
+        derecha: 2
+    }; 
+    console.log(unObjeto.izquierda); // → 1 imprimo en consola lo que se almacena en la propiedad izquierda del objeto
+    delete unObjeto.izquierda; // borro lo que se almacena en la propiedad izquierda del objeto con delete
+    console.log(unObjeto.izquierda); // → undefined muestro la propiedad izquierda del objeto, pero como fue borrada, aparece undefined
+    console.log("izquierda" in unObjeto); // → false el operador in verifica la existencia de la propiedad "izquierda" en el objeto unObjeto
+    console.log("derecha" in unObjeto); // → true el operador in verifica la existencia de la propiedad "izquierda" en el objeto unObjeto
+
+    //.keys devuelve las propiedades de un objeto
+    console.log(Object.keys({
+                            x: 0, 
+                            y: 0, 
+                            z: 2
+                          })
+               ); // → ["x","y","z"]
+
+    let objetoA = {
+        a: 1, 
+        b: 2
+        }; 
+    
+    Object.assign(objetoA, {b: 3, c: 4}); //re escribe la propiedad b con un valor de 3 y crea la propieda c con una valor de 4
+    console.log(objetoA); // → {a: 1, b: 3, c: 4}
+
+
+    //ARRAY DE OBJETOS
+    //Representaremos el diario de Jacques como un array de objetos.
+
+    let diario = [ // creo un array y cada index de el array es un objeto individual
+            {eventos:["trabajo","toque un arbol","pizza", 
+                        "sali a correr","television"], 
+                        ardilla: false}, 
+
+            {eventos:["trabajo","helado","coliflor", "lasaña",
+                        "toque un arbol","me cepille los dientes"], 
+                        ardilla: false}, 
+
+            {eventos:["fin de semana","monte la bicicleta",
+                        "descanso"," nueces", "cerveza"],
+                        ardilla: true}, /* y asi sucesivamente... */ 
+            ];
+
+            console.log(diario[0])
+</script>

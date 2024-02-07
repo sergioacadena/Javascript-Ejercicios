@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    
+    <script>
+
+for (let numero = 0; numero <= 12; numero = numero + 2) 
+        { 
+            console.log(numero); 
+        } // → 0 // → 2 // … etcetera
+
+
+// 2 elevado a la 10 en ciclo for
+let resultado = 1; 
+for (let contador = 0; contador < 10; contador = contador + 1) 
+    { 
+        resultado = resultado * 2; 
+    }
+console.log(resultado); // → 1024
+
+//me muestra el primer número mayor a 20 que es divisible por 7
+
+for (let actual = 20; ; actual = actual + 1) //empieza desde 20 y sin condicion de parar dentro del for
+    { 
+        if (actual % 7 === 0) // la condicion es que si el residuo del numero dividido por 7 es 0, es divisible por 7
+        { 
+            console.log("EL NUMERO ES MAYOR QUE 20 Y DIVISIBLE POR 7");
+            console.log(actual); //muestra el numero divisible por 7
+            break;
+            //Esto significa que el ciclo nunca sedetendrá amenos que se ejecutela declaraciónbreak dentro de el.
+        } 
+    }
+
+//me muestra el primer número mayor a 20 que es divisible por 7
+
+for (let actual = 20; actual <= 70 ; actual = actual + 1) //empieza desde 20 y sin condicion de parar dentro del for
+    { 
+        if (actual % 7 === 0) // la condicion es que si el residuo del numero dividido por 7 es 0, es divisible por 7
+        { 
+            console.log("EL NUMERO ES MAYOR QUE 20 Y DIVISIBLE POR 7");
+            console.log(actual); //muestra el numero divisible por 7
+            //ROMPE EL CICLO FOR Y SALE, PORQUE YA ENCONTRÓ LO QUE NECESITABA DETRO DE UN RANGO DE VALORES
+            //Esto significa que el ciclo nunca sedetendrá amenos que se ejecutela declaraciónbreak dentro de el.
+        } 
+    }
+
+
+    for (let numero = 0; numero <= 12; numero += 2) {//*=2paraduplicarresultadoocontador-=1paracontarhaciaabajo.
+        //Paracontador+=1ycontador-=1,hayinclusoequivalentesmáscortos: contador++ y contador--.
+         console.log(numero);
+         }
+
+    let caracter = ""
+    for (let index = 0; caracter.length <= 7; index++) {
+        
+        caracter = caracter + "#"
+        console.log(caracter)
+    }
+
+    
+    let contador=""
+    // EJERCICIO 
+    //imprimir " FizzBuzz",para números que sean divisibles entre 3 y 5 
+    //(y aún imprimir "Fizz" o "Buzz" para números divisibles por solo uno de ellos).
+
+    for (let index = 1; index <=101; index++) {
+        
+        
+        if((index%3===0) &&(index % 5 === 0)){
+            if(contador!==""){
+                console.log(contador)
+            }          
+            console.log("FizzBuzz");
+            contador="";
+        }else if(index % 3 === 0){
+            if(contador!==""){
+                console.log(contador)
+            }
+            console.log("Fizz");     
+            contador="";
+        }else if(index % 5 === 0){
+            if(contador!==""){
+                console.log(contador)
+            }
+            console.log("Buzz");
+            contador="";
+        }else {
+              contador = contador + index.toString() +" " ;
+        }
+        
+    }
+
+    let tamano = 4
+    for (let index = 0; index <=tamano; index++) {
+      
+        if(index%2!==0){
+
+            let cadena1 =  "# # # # " 
+            console.log(cadena1) 
+
+        }else if(index%2==0){
+
+            let cadena =  " # # # #"
+            console.log(cadena)               
+        }
+        
+    }
+    
+    
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

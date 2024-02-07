@@ -1,0 +1,49 @@
+<script>
+let listaDeNumeros = [2, 3, 5, 7, 11];
+
+console.log(listaDeNumeros[2]); // → 5
+console.log(listaDeNumeros[0]); // → 2 
+console.log(listaDeNumeros[2- 1]); // → 3 muestra lo que esta en el indice 1
+
+let ouch ="Ouch";
+ console.log(typeof ouch.toUpperCase); // → function 
+ console.log(ouch.toUpperCase()); // → OUCH
+
+
+ let secuencia = [1, 2, 3]; // inicializo un array y le envio los valores 1, 2, 3 
+ secuencia.push(4);// con push envío el 4 al array como un nuevo valor se almacena en el indice 3
+ secuencia.push(5); // con push envío el 5 al array como un nuevo valor se almacena en el indice 4
+ console.log(secuencia); // → [1, 2, 3, 4, 5] 
+ console.log(secuencia.pop()); // → 5 muestra y elimina el ultimo valor del array
+ console.log(secuencia); // → [1, 2, 3, 4]
+
+
+ let ejemplo = "Hola, mundo!";
+
+// 1. length: Devuelve la longitud de la cadena.
+console.log("Longitud:", ejemplo.length); // Salida: 12
+
+// 2. toUpperCase: Convierte todos los caracteres de la cadena a mayúsculas.
+console.log("Mayúsculas:", ejemplo.toUpperCase()); // Salida: HOLA, MUNDO!
+
+// 3. toLowerCase: Convierte todos los caracteres de la cadena a minúsculas.
+console.log("Minúsculas:", ejemplo.toLowerCase()); // Salida: hola, mundo!
+
+// 4. charAt: Devuelve el carácter en la posición específica.
+console.log("Carácter en la posición 0:", ejemplo.charAt(0)); // Salida: H
+
+// 5. indexOf: Devuelve la primera posición de la subcadena dentro de la cadena (o -1 si no se encuentra).
+console.log("Índice de 'mundo':", ejemplo.indexOf("mundo")); // Salida: 6
+
+// 6. substring: Devuelve una porción de la cadena, desde la posición de inicio hasta la posición de fin.
+console.log("Substring de 0 a 4:", ejemplo.substring(0, 4)); // Salida: Hola
+
+// 7. slice: Similar a substring, pero también puede aceptar índices negativos.
+console.log("Slice de 6 a 11:", ejemplo.slice(6, 11)); // Salida: mundo
+
+// 8. replace: Reemplaza la primera ocurrencia de una subcadena con otra.
+console.log("Reemplazar 'mundo' con 'amigo':", ejemplo.replace("mundo", "amigo")); // Salida: Hola, amigo!
+
+
+
+</script>

@@ -1,0 +1,39 @@
+<script>
+//RECURSIVIDAD
+function potencia(base, exponente) { 
+    if (exponente == 0) { 
+        return 1;
+     } 
+    else { 
+        return base * potencia(base, exponente- 1); //RECURSIVIDAD
+        } 
+} 
+
+console.log(potencia(2, 3)); // → 8
+
+
+function sumaNaturales(n) {
+    if (n === 1) {
+        return 1; // caso base
+    } else {
+        return n + sumaNaturales(n - 1); // llamada recursiva
+    }
+}
+console.log(sumaNaturales(4)); // → 10
+
+
+function encontrarSolucion(objetivo) {
+    function encontrar(actual, historia){
+        if (actual == objetivo) { 
+            return historia; 
+        } else if (actual > objetivo) { 
+            return null; 
+        } else { 
+            return encontrar(actual + 5,`(${historia} + 5)`)|| encontrar(actual * 3,`(${historia} * 3)`); 
+        } 
+    } 
+    return encontrar(1,"1"); 
+} 
+console.log(encontrarSolucion(24)); // → (((1 * 3) + 5) * 3)
+
+</script>

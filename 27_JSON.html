@@ -1,0 +1,29 @@
+<script>
+/* JSON formato de serialización popular llamado JSON(pronunciado “Jason”), que significa JavaScript Object Notation 
+(“Notación de Objetos JavaScript”).Es ampliamente utilizado como un formato de almacenamiento y comunicación de datos 
+en la Web, incluso en otros lenguajes diferentes a JavaScript. 
+Es independiente del lenguaje, pero su nombre se origina en JavaScript debido a su fácil integración con este lenguaje.
+Sintaxis Simple: JSON utiliza una sintaxis simple y legible para representar datos.
+ Los datos se estructuran en pares clave-valor, similar a los objetos en JavaScript.*/
+//Los comentarios no están permitidos en JSON.
+
+let string = JSON.stringify(//convirtiendo a JASON, en string estpy almacenando solo código JSON
+                                {
+                                ardilla: false, eventos:["fin de semana"]
+                                }
+                            ); 
+console.log(string); //muestro solo código JSON en pantalla
+// → {"ardilla":false,"eventos":["fin de semana"]} 
+console.log(JSON.parse(string).eventos); // → ["fin de semana"]Convierto la string con JASON en Java Script y lo almaceno en eventos como array
+
+/* RESUMEN:
+Los objetos y arrays(que son un tipo específico de objeto)proporcionan formas de agrupar varios valores en un solo valor.
+Conceptualmente, esto nos permite poner un montón de cosas relacionadas en un bolso y correr alredor con el bolso, 
+en lugar de envolver nuestros brazos al rededor de todas las cosas individuales, tratando de aferrarnos a ellas por separado. 
+La mayoría de los valores en JavaScript tienen propiedades, las excepciones son null y undefined. 
+Se accede a las propiedades usando valor.propiedad o valor["propiedad"].Los objetos tienden a usar nombres para sus propiedades
+y almacenar más o menos un conjunto fijo de ellos. Los arrays,por el otro lado, generalmente contienen cantidades variables de valores
+conceptualmente idénticos y usa números(comenzando desde 0)como los nombres de sus propiedades. 
+Hay algunas propiedades con nombre en los arrays, como length y un numero de metodos. 
+Los métodos son funciones que viven en propiedades y (por lo general)actuan sobre el valor del que son una propiedad. */
+</script>

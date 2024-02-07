@@ -1,0 +1,126 @@
+<script>
+/* El diario del licántropo:
+Jacques era un hombre que algunas noches se combertia en ardilla, y quería idintificar por qué sucedia.
+así que decidio crear un diario donde iba a escribir diferentes eventos que le ocurian en el día
+para identificar si alguno de esto eventos tenia correlación con el hecho de convertirse enardilla
+luego decide crear el siguiente programa para, a traves de Java Script y fórmulas estadisticas de correlación
+identificar cual evento tenia mayor correlación con el hecho de convertirse en ardilla.
+ESE DIARIO Y PROGRAMA ESTADISTICO ES EL SIGUIENTE:
+*/
+
+// EL DIARIO DEL LICÁNTROPO
+
+// 1. Jacques crea una array llamado diario donde va a almacenar en objetos los eventos y true si se combirtio en ardilla, 
+//cada indice del array diario[1,2,3..] almacena los eventos ocurridos, y con true si se combirtio en ardilla
+let diario = [];
+function añadirEntrada(eventos, ardilla) { 
+    //CREANDO UN ARRAY CON OBJETOS EN CADA INDEX
+    diario.push({eventos, ardilla}); // diario lo voy a llenar con objetos en cada index, cad vez que lo llame con la función añadirEntrada
+    
+}
+
+/* Jacques llena su diario, cada llamado llena un indice del diario [1,2,3] con un objeto que tiene dos argumentos: 1. eventos, (que a su
+vez es otro array con diferentes eventos que le ocurrieron en el día) y 2. una variable boolean que si tiene arddila es 
+true y ese día se combirtió en ardilla*/
+
+añadirEntrada(["trabajo","toque un arbol","pizza","sali a correr ", "television"],false); 
+añadirEntrada(["trabajo","helado","coliflor","lasaña", "toque un arbol","me cepille los dientes"],false); 
+añadirEntrada(["fin de semana","monte la bicicleta","descanso"," nueces", "cerveza"],true);
+console.log("aquí mostrando index 0",diario[0])
+
+
+
+/* Ahora Jacques va a Hallar la correlación con el metodo estadistico de coeficiente phi (φ), 
+cantida de veces que las combinaciones de las variables fueron observadas: eventos y ardilla en true
+Sï la correlación varia entre 1 y -1, o es no correlación, 1 hay correlación, y -1 correlación inversa*/
+//correlación entre pizza y ardilla
+
+function phi(tabla) { // matriz con los datos de: 1 las dos verdaderas ; 76 las dos falsas; 4 priemer v segunda f ; 9 primera f segunda v
+    return (tabla[3] * tabla[0]- tabla[2] * tabla[1]) / 
+    Math.sqrt(
+        (tabla[2] + tabla[3]) * 
+        (tabla[0] + tabla[1]) * 
+        (tabla[1] + tabla[3]) * 
+        (tabla[0] + tabla[2])
+        ); 
+    } console.log(phi([76, 9, 4, 1])); // → 0.068599434
+
+
+    //el mismo array anterior pero con binarios covertidos a decimal
+    // 1 a la izquierda suma de eventos ardilla 1 a la derecha suma de eventos pizza
+    // 01 en binario igual a 2
+    
+    
+    function tablaPara(evento, diario) { 
+        let tabla = [0, 0, 0, 0];
+         for (let i = 0; i < diario.length; i++) {
+             let entrada = diario[i], index = 0;
+              if (entrada.eventos.includes(evento)) index += 1; //Los arraytienenunmétodoincludes (“incluye”)queverifica si unvalor dadoexisteenelarray
+              if (entrada.ardilla) index += 2; //si es true incluye +2
+              tabla[index] += 1; 
+            } 
+            return tabla;
+         } 
+    console.log(tablaPara("pizza",diario)); // → [76, 9, 4, 1]
+
+    //Cuando un ciclo for se vea de esta manera, con la palabra of (“de”) después de una definición de variable,
+    //recorrerá los elementos del valor dado después of.
+    //Esto funciona no solo para arrays, si no también para strings y algunas otras estructuras de datos
+    for (let entrada of diario) { 
+        console.log(`${entrada.eventos.length} eventos.`);
+     }
+
+     function eventosDiario(diario) { 
+        let eventos = []; 
+        for (let entrada of diario) { //recorre todo el array diario y lo alamcena en entreda
+            for (let evento of entrada.eventos) { //recorre todo el array eventos que era una array dentro de cada objeto del array diario
+                if (!eventos.includes(evento)) { 
+                    eventos.push(evento); 
+                } 
+            } 
+        } return eventos; } 
+     console.log(eventosDiario(diario)); // → ["zanahoria","ejercicio","fin de semana","pan",…]
+
+     //Usandoeso,podemosvertodoslascorrelaciones. 
+     for (let evento of eventosDiario(diario)) {
+         console.log(evento +":",phi(tablaPara(evento, diario)));
+         } 
+     // → zanahoria: 0.0140970969 
+     // → ejercicio: 0.0685994341 
+     // → fin de semana: 0.1371988681 
+     // → pan:-0.0757554019 
+     // → pudin:-0.0648203724 
+     // and so on...
+
+     //FILTRAR CORRELACIONES MAYORES QUE 1
+
+     for (let evento of eventosDiario(diario)) { 
+            let correlacion = phi(tablaPara(evento, diario));
+             if (correlacion > 0.1 || correlacion <-0.1) { 
+                console.log(evento +":",correlacion); 
+            } 
+        } 
+        // → fin de semana: 0.1371988681 
+        // → me cepille los dientes:-0.3805211953 
+        // → dulces: 0.1296407447 
+        // → trabajo:-0.1371988681 
+        // → spaghetti: 0.2425356250 
+        // → leer: 0.1106828054 
+        // → nueces: 0.5902679812
+
+        /* A-ha!Haydosfactoresconunacorrelaciónqueesclaramentemásfuerteque lasotras.Comernuecestieneunfuerteefectopositivoenla
+        posibilidaddeconvertirseenunaardilla,mientrasquecepillarselosdientestieneunsignificativo efectonegativo. 
+        Interesante. Intentemosalgo. */
+
+for (let entrada of diario) { 
+        if (entrada.eventos.includes("nueces")&& !entrada.eventos.includes("me cepille los dientes")) {
+            entrada.eventos.push("dientes con nueces"); 
+        } 
+    }
+    
+           /*  Eseesunresultadofuerte.ElfenómenoocurreprecisamentecuandoJacques comenuecesynosecepillalosdientes. 
+            Sitansoloélnohubiesesidotanflojo consuhigienedental,élnuncahabríanotadosuaflicción. */
+
+
+
+</script>
